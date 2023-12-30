@@ -5,14 +5,8 @@ import subprocess
 import time
 import os
 
-from timeit import default_timer as timer
-from datetime import timedelta
-import datetime
-
-
 def is_non_zero_file(fpath):
     return os.path.isfile(fpath) and os.path.getsize(fpath) > 0
-
 
 class Handler(FileSystemEventHandler):
     def __init__(self, time=datetime.datetime.now()):
@@ -44,6 +38,7 @@ class Handler(FileSystemEventHandler):
                     ),
                     "w",
                 ).close()
+                os.system("cls")
 
 
 if __name__ == "__main__":
